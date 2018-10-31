@@ -1,4 +1,12 @@
 function getIssues() {
+  const repo='js-ajax-fetch-lab'
+  fetch(`https://api.github.com/repos/${repo}/issues`,{
+    headers:{
+      Authorization:`token ${getToken()}`
+    }
+  })
+  .then(res =>res.json())
+  .then(json=>console.log(json))
 }
 
 function showIssues(json) {
@@ -11,7 +19,7 @@ function createIssue() {
 
     title:document.getElementById('title').value,
     title:document.getElementById('body').value
-    
+
   }
   fetch(  `${repo}`,{
     method:'POST',

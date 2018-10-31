@@ -4,6 +4,7 @@ const repo = 'js-ajax-fetch-lab'
  function getToken() {
   //change to your token to run in browser, but set
   //back to '' before committing so all tests pass
+  const token = '38c55db859c1d69d1d4cfc643b6e53fc1b95e5b0 ';
   return '';
 }
  function forkRepo() {

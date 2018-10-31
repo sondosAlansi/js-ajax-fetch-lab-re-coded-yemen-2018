@@ -2,12 +2,30 @@ function getIssues() {
 }
 
 function showIssues(json) {
+
 }
 
 function createIssue() {
+  const repo='js-ajax-fetch-lab/issues'
+  const postData={
+
+    title:document.getElementById('title').value,
+    title:document.getElementById('body').value
+    
+  }
+  fetch(  `${repo}`,{
+    method:'POST',
+    body:JSON.stringify(postData),
+    headers:{
+      Authorization:`token ${getToken()}`
+    }
+  })
+  .then(res =>res.json())
+  .then(json=>console.log(json))
 }
 
 function showResults(json) {
+  document.getElementById('results').innerHTML=`<a href=${json.html_url}>${json.html_url}</a>`
 }
 
 function forkRepo() {
